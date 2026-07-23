@@ -4,7 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宝鸡丰悦云创科技 | 软件技术服务</title>
-    <meta name="description" content="宝鸡丰悦云创科技公司——专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。">
+    <meta name="description" content="宝鸡丰悦云创科技公司——专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。全栈开发、AI 自动化、企业数字化转型一站式服务。">
+    <meta name="keywords" content="宝鸡软件开发,丰悦云创,企业技术服务,AI自动化,全栈开发,小程序开发,数字化转型,陕西软件公司">
+    <meta name="author" content="宝鸡丰悦云创科技有限公司">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / 社交分享 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="宝鸡丰悦云创科技 | 软件技术服务">
+    <meta property="og:description" content="专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。">
+    <meta property="og:url" content="https://fengyue-tech.vercel.app/">
+    <meta property="og:site_name" content="宝鸡丰悦云创科技">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="宝鸡丰悦云创科技 | 软件技术服务">
+    <meta name="twitter:description" content="专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。">
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "宝鸡丰悦云创科技有限公司",
+      "url": "https://fengyue-tech.vercel.app/",
+      "logo": "https://fengyue-tech.vercel.app/logo.svg",
+      "description": "专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "陕西省",
+        "addressLocality": "宝鸡市"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "3954591720@qq.com"
+      }
+    }
+    </script>
+
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230066ff'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'%3E丰%3C/text%3E%3C/svg%3E">
+
     <style>
         /* ===== Reset & Base ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -210,6 +252,10 @@
             font-size: 0.95rem; cursor: pointer; transition: background 0.2s;
         }
         .contact-form button:hover { background: #1d4ed8; }
+        .contact-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+        .form-status { font-size: 0.9rem; min-height: 1.2em; }
+        .form-status.success { color: #4ade80; }
+        .form-status.error { color: #f87171; }
 
         /* ===== Footer ===== */
         footer {
@@ -372,15 +418,52 @@
                         或直接填写右侧表单，我看到了会第一时间回复。
                     </p>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="你的名字" required>
-                    <input type="text" placeholder="联系方式（微信/电话）" required>
-                    <textarea placeholder="简单描述你的需求或问题…" required></textarea>
-                    <button type="submit">发送 →</button>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+                    <input type="text" name="name" placeholder="你的名字" required>
+                    <input type="text" name="contact" placeholder="联系方式（微信/电话/邮箱）" required>
+                    <textarea name="message" placeholder="简单描述你的需求或问题…" required></textarea>
+                    <button type="submit" id="submitBtn">发送 →</button>
+                    <p class="form-status" id="formStatus"></p>
                 </form>
             </div>
         </div>
     </section>
+
+    <script>
+        // 联系表单提交 -> Formspree
+        const form = document.getElementById('contactForm');
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('formStatus');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = '发送中…';
+            status.textContent = '';
+            status.className = 'form-status';
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                });
+                if (res.ok) {
+                    status.textContent = '✓ 已收到，24 小时内会回复你';
+                    status.classList.add('success');
+                    form.reset();
+                } else {
+                    const data = await res.json().catch(() => ({}));
+                    status.textContent = data.error || '发送失败，请直接加微信/邮箱';
+                    status.classList.add('error');
+                }
+            } catch (err) {
+                status.textContent = '网络异常，请直接加微信/邮箱';
+                status.classList.add('error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '发送 →';
+            }
+        });
+    </script>
 
     <!-- ===== Footer ===== -->
     <footer>

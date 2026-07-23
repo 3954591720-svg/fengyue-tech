@@ -2,3 +2,12 @@ website/node_modules/
 website/.vercel/
 website/.now/
 *.log
+
+# 商业项目代码 - 不推公网
+fengyue-yunchuang-platform/
+丰悦汇_乡邻通_风险自查矩阵.md
+
+# 个人工作区
+.openclaw/
+.consolidate-state.json
+memory/
