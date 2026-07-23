@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝鸡丰悦云创科技 | 软件技术服务</title>
+    <meta name="description" content="宝鸡丰悦云创科技公司——专注软件开发与技术服务，为中小企业提供专业、靠谱的技术解决方案。">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        /* ===== Container ===== */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 64px;
+        }
+        nav .logo {
+            font-weight: 700; font-size: 1.15rem;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        nav .nav-links { display: flex; gap: 32px; }
+        nav .nav-links a {
+            font-size: 0.9rem; color: #4b5563; transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: #2563eb; }
+
+        /* ===== Hero ===== */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; bottom: -30%; left: -10%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero h1 {
+            font-size: 2.8rem; font-weight: 800; line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero h1 span { color: #60a5fa; }
+        .hero p {
+            font-size: 1.1rem; color: #94a3b8; max-width: 560px;
+            margin-bottom: 36px; line-height: 1.7;
+        }
+        .hero .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 10px;
+            background: #2563eb; color: #fff; font-weight: 600;
+            font-size: 0.95rem; border: none; cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .hero .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+        .hero .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 10px;
+            background: transparent; color: #e2e8f0; font-weight: 600;
+            font-size: 0.95rem; border: 1px solid #334155; cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .hero .btn-outline:hover { border-color: #60a5fa; color: #fff; }
+        .hero .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 14px; border-radius: 20px;
+            background: rgba(37,99,235,0.15); color: #93c5fd;
+            font-size: 0.82rem; margin-bottom: 20px;
+        }
+
+        /* ===== Section Common ===== */
+        section { padding: 80px 0; }
+        .section-label {
+            display: inline-block; font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: #2563eb; margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 2rem; font-weight: 700; margin-bottom: 16px;
+        }
+        .section-desc {
+            color: #6b7280; max-width: 560px; font-size: 1.05rem;
+            margin-bottom: 48px; line-height: 1.7;
+        }
+
+        /* ===== Services ===== */
+        #services { background: #fff; }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            padding: 32px 28px; border-radius: 14px;
+            border: 1px solid #e5e7eb; background: #fff;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px);
+        }
+        .service-card .icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin-bottom: 18px;
+        }
+        .service-card:nth-child(1) .icon { background: #dbeafe; }
+        .service-card:nth-child(2) .icon { background: #ede9fe; }
+        .service-card:nth-child(3) .icon { background: #fce7f3; }
+        .service-card:nth-child(4) .icon { background: #d1fae5; }
+        .service-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .service-card p { font-size: 0.9rem; color: #6b7280; line-height: 1.6; }
+
+        /* ===== About ===== */
+        #about { background: #f8f9fa; }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center;
+        }
+        .about-grid .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .about-grid .stat-card {
+            padding: 24px; border-radius: 12px; background: #fff;
+            border: 1px solid #e5e7eb; text-align: center;
+        }
+        .about-grid .stat-card .num {
+            font-size: 1.8rem; font-weight: 800; color: #2563eb;
+        }
+        .about-grid .stat-card .label {
+            font-size: 0.85rem; color: #6b7280; margin-top: 4px;
+        }
+        .about-text h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; }
+        .about-text p { color: #4b5563; margin-bottom: 12px; line-height: 1.7; }
+
+        /* ===== Process ===== */
+        #process { background: #fff; }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px; position: relative;
+        }
+        .step {
+            text-align: center; padding: 24px 16px;
+        }
+        .step .step-num {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: #2563eb; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; margin: 0 auto 16px;
+        }
+        .step h4 { font-size: 1rem; margin-bottom: 8px; }
+        .step p { font-size: 0.85rem; color: #6b7280; }
+
+        /* ===== Contact ===== */
+        #contact { background: #0f172a; color: #fff; }
+        #contact .section-label { color: #60a5fa; }
+        #contact .section-desc { color: #94a3b8; }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+        }
+        .contact-info h3 { font-size: 1.2rem; margin-bottom: 16px; }
+        .contact-info p {
+            color: #94a3b8; margin-bottom: 8px; font-size: 0.95rem;
+        }
+        .contact-info p strong { color: #e2e8f0; }
+        .contact-form { display: flex; flex-direction: column; gap: 16px; }
+        .contact-form input, .contact-form textarea {
+            padding: 14px 18px; border-radius: 10px; border: 1px solid #334155;
+            background: #1e293b; color: #fff; font-size: 0.95rem;
+            outline: none; transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #2563eb;
+        }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+        .contact-form button {
+            padding: 14px 28px; border-radius: 10px; border: none;
+            background: #2563eb; color: #fff; font-weight: 600;
+            font-size: 0.95rem; cursor: pointer; transition: background 0.2s;
+        }
+        .contact-form button:hover { background: #1d4ed8; }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 32px 0; background: #0a0f1a; color: #6b7280;
+            font-size: 0.85rem; text-align: center; border-top: 1px solid #1e293b;
+        }
+        footer a { color: #94a3b8; }
+        footer a:hover { color: #60a5fa; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 120px 0 60px; }
+            .about-grid { grid-template-columns: 1fr; gap: 32px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+            nav .nav-links { display: none; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Nav ===== -->
+    <nav>
+        <div class="container">
+            <span class="logo">✦ 丰悦云创</span>
+            <div class="nav-links">
+                <a href="#services">服务</a>
+                <a href="#about">关于</a>
+                <a href="#process">流程</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">📍 陕西 · 宝鸡</div>
+            <h1>用技术为 <span>中小企业</span><br>解决问题的能力</h1>
+            <p>
+                丰悦云创——一家扎根宝鸡的技术服务公司。<br>
+                专注软件开发、系统搭建、技术咨询。不画大饼，只解决问题。
+            </p>
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">💬 聊聊需求</a>
+                <a href="#services" class="btn-outline">看看能做什么 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services">
+        <div class="container">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">能做什么</h2>
+            <p class="section-desc">一人团队，全栈能力。从需求沟通到交付上线，全程亲自把控。</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">💻</div>
+                    <h3>软件定制开发</h3>
+                    <p>Web应用、小程序、后台管理系统。按需定制，小而精，快速交付。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <h3>网站 & H5 搭建</h3>
+                    <p>企业官网、落地页、营销H5。从设计到上线一条龙，响应式，够好看。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔧</div>
+                    <h3>技术支持 & 咨询</h3>
+                    <p>技术方案评估、现有系统维护升级、技术选型建议。帮你少踩坑。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤖</div>
+                    <h3>AI 应用落地</h3>
+                    <p>AI客服、自动化流程、内容生成工具。用AI帮你的业务降本增效。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="section-label">About</div>
+                    <h2>丰悦云创科技</h2>
+                    <p>
+                        位于陕西宝鸡，专注为本地及周边中小企业提供靠谱的技术服务。
+                        创始人有多年一线开发经验，深耕全栈技术。团队虽小，但每个项目都是亲自上手。
+                    </p>
+                    <p>
+                        不养销售团队、不搞复杂流程——你直接跟写代码的人沟通。
+                        需求明确、报价透明、交付靠谱。
+                    </p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="num">100%</div>
+                        <div class="label">创始人亲写代码</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">先聊</div>
+                        <div class="label">需求沟通再报价</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">敏捷</div>
+                        <div class="label">小步快跑交付</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="num">宝鸡</div>
+                        <div class="label">本地服务优先</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section id="process">
+        <div class="container">
+            <div class="section-label">Process</div>
+            <h2 class="section-title">合作流程</h2>
+            <p class="section-desc">简单透明，三步走。没有层层审批，没有无效扯皮。</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>沟通需求</h4>
+                    <p>聊聊你想做什么、预算多少、时间多紧。我评估后给方案和报价。</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>开发落地</h4>
+                    <p>签订需求文档后开始开发，过程中保持同步，你随时看进度。</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>交付 + 售后</h4>
+                    <p>上线交付不是终点。后续维护、迭代、技术支持长期在线。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">来聊聊</h2>
+            <p class="section-desc">有项目想做？有技术问题想问？直接找创始人聊。</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p><strong>📍</strong> 陕西省宝鸡市</p>
+                    <p><strong>📱</strong> 微信：fengyue_qclaw</p>
+                    <p><strong>📧</strong> tech@fengyue-tech.com</p>
+                    <p style="margin-top:24px; font-size:0.85rem; color:#64748b;">
+                        或直接填写右侧表单，我看到了会第一时间回复。
+                    </p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="你的名字" required>
+                    <input type="text" placeholder="联系方式（微信/电话）" required>
+                    <textarea placeholder="简单描述你的需求或问题…" required></textarea>
+                    <button type="submit">发送 →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="container">
+            <p>© 2026 宝鸡丰悦云创科技公司 · 陕ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+</body>
+</html>
