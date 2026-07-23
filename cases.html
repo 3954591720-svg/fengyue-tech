@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例展示 | 宝鸡丰悦云创科技</title>
+    <meta name="description" content="丰悦云创技术案例展示：CRM 工具、企业官网、AI 应用落地。脱敏后的真实项目经验。">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+        header { background: #0a0e27; color: #fff; padding: 16px 0; }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .logo .yue { color: #0066ff; }
+        nav a { color: #cbd5e0; text-decoration: none; margin-left: 24px; font-size: 0.95rem; }
+        nav a:hover { color: #fff; }
+        h1 { font-size: 2.4rem; margin-bottom: 12px; }
+        .subtitle { color: #6b7280; font-size: 1.05rem; margin-bottom: 48px; }
+        .case-card { background: #fff; border-radius: 8px; padding: 32px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+        .case-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .case-header { display: flex; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+        .case-tag { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+        .case-tag.ai { background: #fce7f3; color: #be185d; }
+        .case-tag.web { background: #dbeafe; color: #1d4ed8; }
+        .case-tag.crm { background: #d1fae5; color: #047857; }
+        .case-tag.mini { background: #fed7aa; color: #c2410c; }
+        .case-title { font-size: 1.3rem; font-weight: 700; }
+        .case-meta { color: #6b7280; font-size: 0.85rem; margin-left: auto; }
+        .case-desc { color: #374151; margin-bottom: 16px; }
+        .case-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; padding: 16px; background: #f8f9fa; border-radius: 6px; }
+        .highlight { font-size: 0.9rem; }
+        .highlight strong { color: #0066ff; display: block; margin-bottom: 2px; }
+        .case-tech { font-size: 0.85rem; color: #6b7280; padding-top: 12px; border-top: 1px solid #e5e7eb; }
+        .case-tech code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.8rem; margin-right: 4px; }
+        .disclaimer { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 16px 20px; border-radius: 4px; margin-bottom: 32px; font-size: 0.9rem; color: #92400e; }
+        footer { background: #0a0e27; color: #6b7280; padding: 32px 24px; text-align: center; font-size: 0.85rem; margin-top: 60px; }
+        footer a { color: #6b7280; text-decoration: none; }
+        footer a:hover { color: #fff; }
+        .cta { background: linear-gradient(135deg, #0066ff 0%, #00aaff 100%); color: #fff; padding: 32px; border-radius: 8px; text-align: center; margin: 40px 0; }
+        .cta h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .cta p { opacity: 0.95; margin-bottom: 16px; }
+        .cta a { display: inline-block; background: #fff; color: #0066ff; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">丰<span class="yue">悦</span>云创</a>
+            <nav>
+                <a href="/">首页</a>
+                <a href="/#services">服务</a>
+                <a href="/cases.html">案例</a>
+                <a href="/#contact">联系</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>案例展示</h1>
+        <p class="subtitle">脱敏后的真实项目经验。每个案例都对应一类通用解决方案。</p>
+
+        <div class="disclaimer">
+            ⚠️ 所有案例均已脱敏处理。客户名称、行业数据、具体技术细节已隐藏，但技术方案与交付能力真实可信。
+        </div>
+
+        <!-- 案例 1: CRM -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag crm">CRM 工具</span>
+                <span class="case-title">某连锁零售品牌客户管理系统</span>
+                <span class="case-meta">2025 · 8 周</span>
+            </div>
+            <p class="case-desc">
+                为某连锁零售品牌定制客户关系管理系统。客户痛点：原有 Excel 管理客户跟进效率低、统计困难、数据易丢失。需要一个轻量级 CRM 来管客户档案、跟进记录、销售漏斗和业绩统计。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>客户规模</strong>支持 50+ 销售员同时在线</div>
+                <div class="highlight"><strong>数据迁移</strong>Excel 8 万条客户档案零丢失迁移</div>
+                <div class="highlight"><strong>统计报表</strong>销售漏斗、月度业绩自动生成</div>
+                <div class="highlight"><strong>权限控制</strong>四级权限（总监/经理/主管/销售）</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>Vue 3</code><code>Element Plus</code><code>Node.js</code><code>MySQL</code><code>腾讯云轻量</code><code>微信公众号接入</code>
+            </div>
+        </div>
+
+        <!-- 案例 2: 企业官网 -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag web">企业官网</span>
+                <span class="case-title">某高端制造企业品牌形象站</span>
+                <span class="case-meta">2026 · 3 周</span>
+            </div>
+            <p class="case-desc">
+                为某高端制造企业重建官网。原有官网 7 年未更新、设计陈旧、移动端不适配。客户需要：现代化品牌形象、移动端友好、SEO 友好、产品手册 PDF 下载、英文/中文双语。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>加载速度</strong>首屏 &lt; 1.5 秒（Lighthouse 95+）</div>
+                <div class="highlight"><strong>SEO</strong>百度/Google 双 SEO 优化，关键词排名首页</div>
+                <div class="highlight"><strong>多语言</strong>中英双语，国际客户可访问</div>
+                <div class="highlight"><strong>CMS</strong>产品资料后台可编辑，无需开发</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>Next.js</code><code>静态导出</code><code>Vercel 部署</code><code>Tailwind CSS</code><code>SEO 优化</code>
+            </div>
+        </div>
+
+        <!-- 案例 3: AI 落地 -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag ai">AI 应用</span>
+                <span class="case-title">某教育机构智能客服系统</span>
+                <span class="case-meta">2026 · 4 周</span>
+            </div>
+            <p class="case-desc">
+                为某教育机构搭建 AI 智能客服。客户痛点：客服人员 24 小时轮班压力大、夜间咨询响应慢、常见问题重复回答。需要：自动回答 80% 常见问题、复杂问题转人工、对话记录可追溯。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>自动解决</strong>约 78% 常见问题无需人工</div>
+                <div class="highlight"><strong>人工介入</strong>复杂问题无缝转人工，带上下文</div>
+                <div class="highlight"><strong>知识库</strong>客户产品文档自动导入学习</div>
+                <div class="highlight"><strong>成本</strong>替代 1.5 个夜班客服</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>AI Agent</code><code>向量数据库</code><code>RAG</code><code>微信客服接入</code><code>后台审核工作台</code>
+            </div>
+        </div>
+
+        <!-- 案例 4: 小程序 -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag mini">小程序</span>
+                <span class="case-title">某餐饮品牌会员小程序</span>
+                <span class="case-meta">2025 · 5 周</span>
+            </div>
+            <p class="case-desc">
+                为某连锁餐饮品牌开发微信小程序会员系统。客户需要：会员注册/储值/积分、扫码点单、优惠券核销、外卖订单对接、月度营销活动模板。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>会员数</strong>上线 3 月沉淀 6000+ 会员</div>
+                <div class="highlight"><strong>复购率</strong>会员复购率提升 35%</div>
+                <div class="highlight"><strong>支付</strong>微信支付 + 储值双通道</div>
+                <div class="highlight"><strong>营销</strong>后台模板化活动，1 分钟上线</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>微信小程序原生</code><code>云开发</code><code>微信支付</code><code>会员等级系统</code>
+            </div>
+        </div>
+
+        <!-- 案例 5: 部署运维 -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag web">运维</span>
+                <span class="case-title">某 SaaS 公司迁移上云</span>
+                <span class="case-meta">2026 · 2 周</span>
+            </div>
+            <p class="case-desc">
+                为某 SaaS 公司完成从老旧自建机房到云端的无缝迁移。客户痛点：单点服务器频繁宕机、运维人力消耗大、扩容困难。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>可用性</strong>从 99% 提升到 99.95%</div>
+                <div class="highlight"><strong>成本</strong>月度运维成本下降 40%</div>
+                <div class="highlight"><strong>自动化</strong>CI/CD 全自动部署，回滚 30 秒</div>
+                <div class="highlight"><strong>监控</strong>异常告警 5 分钟内响应</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>Docker</code><code>Kubernetes</code><code>GitHub Actions</code><code>Prometheus</code><code>腾讯云 CVM</code>
+            </div>
+        </div>
+
+        <!-- 案例 6: 自动化 -->
+        <div class="case-card">
+            <div class="case-header">
+                <span class="case-tag ai">自动化</span>
+                <span class="case-title">某外贸公司订单自动化流程</span>
+                <span class="case-meta">2026 · 3 周</span>
+            </div>
+            <p class="case-desc">
+                为某外贸公司自动化从订单接收到发货的全流程。客户痛点：多平台订单手动处理（Amazon/eBay/独立站）、Excel 汇总繁琐、易出错、人力成本高。
+            </p>
+            <div class="case-highlights">
+                <div class="highlight"><strong>订单处理</strong>自动从 3 个平台抓单，零人工录入</div>
+                <div class="highlight"><strong>物流同步</strong>自动调取运单号同步给客户</div>
+                <div class="highlight"><strong>财务报表</strong>自动按日/周/月生成营收报表</div>
+                <div class="highlight"><strong>节省人力</strong>替代 2 个订单员</div>
+            </div>
+            <div class="case-tech">
+                技术栈：<code>Python</code><code>定时任务</code><code>ERP 接口</code><code>邮件自动通知</code><code>Google Sheets 对接</code>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>有类似需求？</h2>
+            <p>每个案例背后的技术能力都可复用，聊 30 分钟看适不适合你。</p>
+            <a href="/#contact">聊聊你的项目 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 宝鸡丰悦云创科技公司</p>
+        <p style="margin-top: 8px;">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备XXXXXXXX号-1</a>
+            <span style="margin: 0 8px;">|</span>
+            <span>陕公网安备 XXXXXXXXXXXXXXX 号</span>
+        </p>
+        <p style="margin-top: 8px; font-size: 0.85rem;">
+            <a href="/privacy-policy.html" style="margin-right: 16px;">隐私政策</a>
+            <a href="/terms.html">服务条款</a>
+        </p>
+    </footer>
+</body>
+</html>

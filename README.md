@@ -1,96 +1,116 @@
-# 宝鸡丰悦云创科技 — 运营体系
+# 宝鸡丰悦云创科技 — 官方运营仓库
 
-> 2026-07-23 搭建完成 | 一人公司 · 软件开发/技术服务
+[![Website](https://img.shields.io/badge/Website-Live-0066ff)](https://fengyue-tech.vercel.app)
+[![ICP](https://img.shields.io/badge/ICP-Pending-orange)](https://beian.miit.gov.cn/)
+[![GitHub](https://img.shields.io/badge/GitHub-3954591720--svg-black)](https://github.com/3954591720-svg/fengyue-tech)
 
----
-
-## 📁 文件结构
-
-```
-├── website/
-│   ├── index.html      ← 官网（可直接部署）
-│   ├── vercel.json     ← Vercel 部署配置
-│   └── deploy.sh      ← 部署脚本（支持 Vercel/GitHub Pages/本地预览）
-├── content/
-│   ├── 技术文章.md      ← 《一人技术公司，我如何用AI把开发效率翻了3倍》
-│   ├── 公众号介绍文章.md ← 《在宝鸡，一个人做软件公司是什么体验》+ 4周内容规划
-│   ├── 客户沟通SOP.md   ← 完整话术 + 报价模板 + 交付流程
-│   ├── AI自动化方案.md  ← 工具链 + 每日工作流 + 一键启动指南
-│   └── 任务看板模板.md  ← P0/P1/P2分级任务 + 本周日历 + 指标看板
-├── company_plan.md      ← 全景运营方案
-└── 运营交付_20260723.md ← 交付记录
-```
+> 一人公司 · 全栈开发 · 软件技术服务 · 坐标陕西宝鸡
 
 ---
 
-## 🌐 官网部署（3选1）
+## 🌐 在线访问
 
-### 方式一：Vercel（推荐，30秒上线）
+- 官网：https://fengyue-tech.vercel.app
+- 案例：https://fengyue-tech.vercel.app/cases.html
+- 隐私政策：https://fengyue-tech.vercel.app/privacy-policy.html
+- 服务条款：https://fengyue-tech.vercel.app/terms.html
+
+---
+
+## 📦 项目结构
+
+```
+fengyue-tech/                       ← 公网仓库（仅放公开内容）
+├── index.html                      ← 官网首页
+├── cases.html                      ← 案例展示（脱敏）
+├── privacy-policy.html             ← 隐私政策
+├── terms.html                      ← 服务条款
+├── logo.svg                        ← 品牌 logo
+├── sitemap.xml                     ← SEO
+├── robots.txt                      ← 搜索引擎规则
+├── content/                        ← 内容资产
+│   ├── 技术文章.md                 ← 一人公司 AI 效率文章
+│   ├── 公众号介绍文章.md           ← 公众号首篇文章
+│   ├── 公众号简介文案.md           ← 公众号注册文案
+│   ├── 客户沟通SOP.md              ← 销售流程
+│   ├── 客户跟进机制.md             ← 跟进自动化
+│   ├── AI自动化方案.md             ← AI 工具链
+│   ├── 业务边界清单.md             ← 做/不做红线
+│   ├── 任务看板模板.md             ← 项目管理
+│   └── 合规合法合理合情建设进度.md  ← 战略进度追踪
+├── contracts/                      ← 合同模板
+│   ├── 技术服务合同模板.md
+│   └── 保密协议模板.md
+├── operations/                     ← 运营手册
+│   ├── ICP备案完整操作指南.md
+│   └── ICP备案前-域名与服务器选型.md
+├── scripts/                        ← 自动化工具
+│   ├── generate_quote.py           ← 报价单 PDF 生成
+│   └── generate_contract.py        ← 合同 PDF 生成
+├── company_plan.md                 ← 全景运营方案
+└── 运营交付_20260723.md            ← 交付记录
+
+fengyue-yunchuang-platform/         ← 私有仓库（商业代码，单独仓库）
+└── （丰悦汇 / 乡邻通 等商业项目）
+```
+
+---
+
+## 🚀 快速开始（开发者）
+
+### 本地预览
 
 ```bash
-# 1. 获取 Vercel Token
-#    访问 https://vercel.com/account/tokens → Create Token
-
-# 2. 部署（一条命令）
-export VERCEL_TOKEN='你的Token'
-cd website && npx vercel --token "$VERCEL_TOKEN" --yes --prod
+python3 -m http.server 8899
+# 访问 http://127.0.0.1:8899
 ```
 
-### 方式二：GitHub Pages（免费，需 GitHub 账号）
+### 重新部署到 Vercel
 
 ```bash
-# 推送 website/ 目录到 GitHub 仓库
-# Settings → Pages → Source: gh-pages branch
-# 等待 2 分钟，网站上线
+# 任何 push 到 main → Vercel 自动触发部署
+git add .
+git commit -m "your change"
+git push origin main
 ```
 
-### 方式三：Netlify（拖拽上线，无需命令行）
+### 生成报价单 / 合同 PDF
 
-1. 访问 [app.netlify.com/drop](https://app.netlify.com/drop)
-2. 把 `website/` 文件夹拖进去
-3. 完成！获得一个 `xxx.netlify.app` 链接
+```bash
+# 报价单
+python3 scripts/generate_quote.py "客户名" "项目名" 28000
 
----
-
-## 📝 内容发布
-
-| 平台 | 操作步骤 |
-|------|---------|
-| **公众号** | 登录公众号后台 → 新建图文消息 → 复制 `content/公众号介绍文章.md` 内容 → 预览 → 发布 |
-| **掘金** | 登录 [juejin.cn](https://juejin.cn) → 写文章 → 粘贴 `content/技术文章.md` 内容 → 发布 |
-| **知乎** | 登录 [zhihu.com](https://zhihu.com) → 写文章 → 粘贴技术文章内容 → 发布 |
+# 合同
+python3 scripts/generate_contract.py "客户名" "项目名" 28000 "联系人" "电话" "邮箱"
+```
 
 ---
 
-## 💬 客户沟通 SOP
+## 🎯 服务范围
 
-直接打开 `content/客户沟通SOP.md`，里面有：
-- 4套高频话术模板（接需求/问价/跟进/比价）
-- 完整项目报价单模板
-- 8步成交流程
-- 售后跟进话术（1周/1个月/3个月）
+| 业务 | 起价 |
+|---|---|
+| 企业官网 / 落地页 | ¥2,000 |
+| 软件定制开发 | ¥3,000 |
+| AI 应用落地 | ¥10,000 |
+| 云部署 / 运维 | ¥2,000/次 |
+| 技术咨询 | ¥300/小时 |
 
----
-
-## 🤖 AI 自动化配置
-
-打开 `content/AI自动化方案.md`，按以下顺序配置（耗时约1小时）：
-
-1. **AI 编码助手** → 装 Cursor 或通义灵码
-2. **AI 客服机器人** → 用扣子 Coze 搭（免费，5分钟上线）
-3. **内容生成** → 腾讯元宝 / Kimi / ChatGPT
+详见 https://fengyue-tech.vercel.app/#services
 
 ---
 
-## ✅ 今日待办（本周内完成）
+## 📞 联系
 
-- [ ] 打开 `website/index.html` 确认官网效果
-- [ ] 注册 Vercel 账号 + 部署官网
-- [ ] 注册公众号 + 发布第一篇文章
-- [ ] 在掘金/知乎发布技术文章
-- [ ] 读一遍 `content/客户沟通SOP.md`，熟悉话术
-- [ ] 按 `任务看板模板.md` 规划本周工作
+- 📧 邮箱：3954591720@qq.com
+- 🌐 官网：https://fengyue-tech.vercel.app
+- 📍 地址：陕西省宝鸡市渭滨区高新开发区
 
 ---
 
-> **提示**：本地预览服务器在 `http://127.0.0.1:8899`，修改 `website/index.html` 后刷新即可看到更新。
+## 📜 许可证
+
+本仓库对外公开内容（官网、文案、模板）仅用于展示与合作沟通。
+商业代码（丰悦汇、乡邻通等）在私有仓库 `fengyue-yunchuang-platform` 维护。
+
+© 2026 宝鸡丰悦云创科技有限公司 · 陕ICP备XXXXXXXX号-1
