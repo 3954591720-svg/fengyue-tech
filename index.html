@@ -45,7 +45,9 @@
     </script>
 
     <!-- 网站图标 -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230066ff'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'%3E丰%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <link rel="apple-touch-icon" href="/logo.svg">
+    <meta property="og:image" content="https://fengyue-tech.vercel.app/logo.svg">
 
     <style>
         /* ===== Reset & Base ===== */
@@ -162,8 +164,11 @@
         /* ===== Services ===== */
         #services { background: #fff; }
         .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
+        }
+        @media (min-width: 900px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
         }
         .service-card {
             padding: 32px 28px; border-radius: 14px;
@@ -317,22 +322,32 @@
                 <div class="service-card">
                     <div class="icon">💻</div>
                     <h3>软件定制开发</h3>
-                    <p>Web应用、小程序、后台管理系统。按需定制，小而精，快速交付。</p>
+                    <p>Web 应用、小程序、后台管理系统。按需定制，小而精，快速交付。</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon">📱</div>
+                    <div class="icon">🌐</div>
                     <h3>网站 & H5 搭建</h3>
-                    <p>企业官网、落地页、营销H5。从设计到上线一条龙，响应式，够好看。</p>
+                    <p>企业官网、落地页、营销 H5。从设计到上线一条龙，响应式、加载快、SEO 友好。</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon">🔧</div>
-                    <h3>技术支持 & 咨询</h3>
-                    <p>技术方案评估、现有系统维护升级、技术选型建议。帮你少踩坑。</p>
+                    <div class="icon">☁️</div>
+                    <h3>云计算 & 部署运维</h3>
+                    <p>Vercel / 腾讯云 / 阿里云部署，Docker 容器化，CI/CD 自动化，省心省力。</p>
                 </div>
                 <div class="service-card">
                     <div class="icon">🤖</div>
                     <h3>AI 应用落地</h3>
-                    <p>AI客服、自动化流程、内容生成工具。用AI帮你的业务降本增效。</p>
+                    <p>AI 客服、自动化流程、智能体（Agent）开发。用 AI 把重复劳动省下来。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔧</div>
+                    <h3>技术咨询 & 架构</h3>
+                    <p>技术选型、架构设计、代码评审、现有系统改造。帮你少走弯路。</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📊</div>
+                    <h3>数据 & 数字化</h3>
+                    <p>数据采集、可视化看板、业务系统对接。让数据驱动你的决策。</p>
                 </div>
             </div>
         </div>
@@ -468,7 +483,7 @@
     <!-- ===== Footer ===== -->
     <footer>
         <div class="container">
-            <p>© 2026 宝鸡丰悦云创科技公司 · 陕ICP备XXXXXXXX号</p>
+            <p>© 2026 宝鸡丰悦云创科技公司 · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备XXXXXXXX号</a></p>
         </div>
     </footer>
 
