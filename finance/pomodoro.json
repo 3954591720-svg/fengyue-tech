@@ -1,0 +1,59 @@
+{
+  "sessions": [
+    {
+      "project": "智能客服开发",
+      "start_time": "2026-07-21T09:30:00",
+      "end_time": "2026-07-21T09:55:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    },
+    {
+      "project": "智能客服开发",
+      "start_time": "2026-07-21T10:30:00",
+      "end_time": "2026-07-21T10:55:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    },
+    {
+      "project": "智能客服开发",
+      "start_time": "2026-07-22T14:00:00",
+      "end_time": "2026-07-22T14:25:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    },
+    {
+      "project": "官网建设",
+      "start_time": "2026-07-23T09:00:00",
+      "end_time": "2026-07-23T09:25:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    },
+    {
+      "project": "案例展示页",
+      "start_time": "2026-07-24T07:30:00",
+      "end_time": "2026-07-24T07:55:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    },
+    {
+      "project": "财务脚本",
+      "start_time": "2026-07-24T08:00:00",
+      "end_time": "2026-07-24T08:25:00",
+      "planned_minutes": 25,
+      "actual_minutes": 25.0,
+      "completed": true,
+      "type": "focus"
+    }
+  ],
+  "current": null
+}

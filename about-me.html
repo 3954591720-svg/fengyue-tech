@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丰悦 | 全栈开发者 & 一人公司创始人</title>
+    <meta name="description" content="丰悦，90 后全栈开发者，宝鸡丰悦云创科技公司创始人。专注软件开发、技术服务、AI 应用落地。">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
+        .hero { background: linear-gradient(135deg, #0a0e27 0%, #0066ff 100%); color: #fff; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 8px; font-weight: 700; }
+        .hero .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 24px; }
+        .hero .tagline { font-size: 1rem; opacity: 0.8; max-width: 600px; margin: 0 auto 24px; }
+        .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+        .badge { background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; backdrop-filter: blur(10px); }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.6rem; color: #0066ff; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #e5e7eb; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+        .info-item { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .info-label { color: #6b7280; font-size: 0.85rem; margin-bottom: 4px; }
+        .info-value { font-weight: 600; color: #1a1a2e; }
+        .skill-group { margin-bottom: 24px; }
+        .skill-group-title { font-weight: 600; margin-bottom: 12px; color: #1a1a2e; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { background: #e0e7ff; color: #4338ca; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; }
+        .experience { background: #fff; padding: 24px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .experience-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .experience-title { font-size: 1.1rem; font-weight: 700; }
+        .experience-company { color: #0066ff; font-weight: 600; }
+        .experience-date { color: #6b7280; font-size: 0.85rem; }
+        .experience ul { padding-left: 20px; color: #374151; }
+        .experience li { margin-bottom: 6px; }
+        .project-card { background: #fff; padding: 24px; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-left: 4px solid #0066ff; }
+        .project-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .project-meta { color: #6b7280; font-size: 0.85rem; margin-bottom: 12px; }
+        .project-desc { color: #374151; margin-bottom: 12px; }
+        .project-tech { font-size: 0.85rem; color: #6b7280; }
+        .project-tech code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.8rem; margin-right: 4px; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 24px; }
+        .contact-item { background: #fff; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .contact-icon { font-size: 1.8rem; margin-bottom: 8px; }
+        .contact-label { color: #6b7280; font-size: 0.8rem; }
+        .contact-value { font-weight: 600; color: #1a1a2e; margin-top: 4px; }
+        footer { background: #0a0e27; color: #6b7280; padding: 32px 20px; text-align: center; font-size: 0.85rem; margin-top: 60px; }
+        footer a { color: #6b7280; text-decoration: none; margin: 0 8px; }
+        footer a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>丰 悦</h1>
+        <p class="subtitle">全栈开发者 · 一人公司创始人 · 软件技术服务</p>
+        <p class="tagline">坐标陕西宝鸡 · 6 年+开发经验 · 专注让中小企业用上靠谱的技术</p>
+        <div class="badges">
+            <span class="badge">⚡ 全栈开发</span>
+            <span class="badge">🤖 AI 应用落地</span>
+            <span class="badge">☁️ 云端部署</span>
+            <span class="badge">📱 小程序 / Web</span>
+            <span class="badge">🛠️ 自动化</span>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 基础信息 -->
+        <h2>👋 基础信息</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">所在地</div>
+                <div class="info-value">陕西省宝鸡市</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">公司</div>
+                <div class="info-value">宝鸡丰悦云创科技</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">成立</div>
+                <div class="info-value">2026 年</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">行业</div>
+                <div class="info-value">软件 / 技术服务</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">工作模式</div>
+                <div class="info-value">全职 / 远程</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">响应速度</div>
+                <div class="info-value">24 小时内回复</div>
+            </div>
+        </div>
+
+        <!-- 技术栈 -->
+        <h2>💻 技术栈</h2>
+        <div class="skill-group">
+            <div class="skill-group-title">前端</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Vue 3</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">微信小程序</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <div class="skill-group-title">后端</div>
+            <div class="skill-tags">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">Express</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Redis</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <div class="skill-group-title">云端 / DevOps</div>
+            <div class="skill-tags">
+                <span class="skill-tag">腾讯云</span>
+                <span class="skill-tag">阿里云</span>
+                <span class="skill-tag">Vercel</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Prometheus</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <div class="skill-group-title">AI / 自动化</div>
+            <div class="skill-tags">
+                <span class="skill-tag">AI Agent</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">向量数据库</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">爬虫自动化</span>
+            </div>
+        </div>
+
+        <!-- 项目经验 -->
+        <h2>🚀 代表项目</h2>
+
+        <div class="project-card">
+            <div class="project-title">丰悦云创官网</div>
+            <div class="project-meta">2026 · 一人完成</div>
+            <div class="project-desc">
+                公司官方网站。从设计、编码、部署全流程一人完成。SEO 优化后百度收录，
+                Google Lighthouse 评分 95+，日均访问稳定。
+            </div>
+            <div class="project-tech">
+                <code>HTML/CSS/JS</code><code>Vercel</code><code>SEO</code>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">连锁零售 CRM 系统</div>
+            <div class="project-meta">2025 · 8 周 · 50+ 用户</div>
+            <div class="project-desc">
+                为某连锁零售品牌定制 CRM。Excel 8 万客户零丢失迁移，四级权限控制，
+                销售漏斗+月度报表自动生成。
+            </div>
+            <div class="project-tech">
+                <code>Vue 3</code><code>Element Plus</code><code>Node.js</code><code>MySQL</code>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">教育机构 AI 智能客服</div>
+            <div class="project-meta">2026 · 4 周 · 替代 1.5 夜班</div>
+            <div class="project-desc">
+                智能客服系统，自动解答 78% 常见问题，复杂问题无缝转人工。
+                客户培训成本降低 60%，用户满意度提升。
+            </div>
+            <div class="project-tech">
+                <code>AI Agent</code><code>RAG</code><code>微信客服接入</code>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">SaaS 公司云迁移</div>
+            <div class="project-meta">2026 · 2 周 · 99.95% 可用性</div>
+            <div class="project-desc">
+                老旧机房迁移到云端，可用性从 99% 提升到 99.95%，运维成本下降 40%。
+                CI/CD 全自动部署，回滚 30 秒内。
+            </div>
+            <div class="project-tech">
+                <code>Docker</code><code>K8s</code><code>GitHub Actions</code>
+            </div>
+        </div>
+
+        <!-- 工作经历 -->
+        <h2>💼 工作经历</h2>
+
+        <div class="experience">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">创始人</div>
+                    <div class="experience-company">宝鸡丰悦云创科技有限公司</div>
+                </div>
+                <div class="experience-date">2026 - 至今</div>
+            </div>
+            <ul>
+                <li>独立运营软件开发/技术服务业务，覆盖官网、定制软件、AI 应用、云端运维</li>
+                <li>从 0 到 1 搭建公司体系：合同 / 流程 / 财务 / 品牌 / 客服</li>
+                <li>已交付 6+ 客户项目，满意度 100%</li>
+            </ul>
+        </div>
+
+        <div class="experience">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">高级全栈开发</div>
+                    <div class="experience-company">（此前任职公司，详见简历 PDF）</div>
+                </div>
+                <div class="experience-date">2020 - 2026</div>
+            </div>
+            <ul>
+                <li>主导多个企业级项目（CRM / ERP / 电商后台）架构设计</li>
+                <li>推动团队 AI 工具落地，开发效率提升 3 倍</li>
+                <li>多次获公司年度优秀员工</li>
+            </ul>
+        </div>
+
+        <!-- 联系我 -->
+        <h2>📞 联系方式</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">邮箱</div>
+                <div class="contact-value">3954591720@qq.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-label">官网</div>
+                <div class="contact-value">
+                    <a href="https://fengyue-tech.vercel.app" style="color:#0066ff;text-decoration:none;">fengyue-tech.vercel.app</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-label">地址</div>
+                <div class="contact-value">陕西宝鸡</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">💼</div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">
+                    <a href="https://github.com/3954591720-svg" style="color:#0066ff;text-decoration:none;">@3954591720-svg</a>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top: 40px; padding: 20px; background: #e0e7ff; border-radius: 8px; color: #1a1a2e; text-align: center;">
+            💡 <strong>如果您有项目需要落地，欢迎随时联系。聊 30 分钟看是否合适。</strong>
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2026 宝鸡丰悦云创科技公司</p>
+        <p style="margin-top: 8px;">
+            <a href="/">首页</a>
+            <a href="/cases.html">案例</a>
+            <a href="/privacy-policy.html">隐私政策</a>
+        </p>
+    </footer>
+</body>
+</html>
