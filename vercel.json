@@ -3,8 +3,5 @@
   "buildCommand": "",
   "outputDirectory": "website",
   "framework": null,
-  "installCommand": "",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/website/$1" }
-  ]
+  "installCommand": ""
 }
