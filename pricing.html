@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务报价 | 丰悦云创</title>
+    <meta name="description" content="宝鸡丰悦云创科技公司公开报价区间，软件开发、网站建设、AI 应用、运维服务透明定价。">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 100; }
+        nav .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        nav .logo { font-weight: 700; font-size: 1.15rem; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav .nav-links { display: flex; gap: 32px; }
+        nav .nav-links a { font-size: 0.9rem; color: #4b5563; transition: color 0.2s; }
+        nav .nav-links a:hover { color: #2563eb; }
+        nav .nav-links a.active { color: #2563eb; font-weight: 600; }
+        .hero { padding: 140px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; text-align: center; }
+        .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 16px; }
+        .hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+        .section-title { font-size: 1.6rem; color: #2563eb; margin-bottom: 12px; text-align: center; }
+        .section-sub { text-align: center; color: #6b7280; margin-bottom: 40px; font-size: 0.95rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px; }
+        .price-card { background: #fff; border-radius: 12px; padding: 32px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); position: relative; transition: transform 0.2s; }
+        .price-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .price-card.featured { border: 2px solid #2563eb; }
+        .price-card.featured::before { content: "推荐"; position: absolute; top: -12px; left: 24px; background: #2563eb; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .price-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .price-card .desc { color: #6b7280; font-size: 0.9rem; margin-bottom: 16px; min-height: 42px; }
+        .price-card .price { font-size: 1.8rem; font-weight: 700; color: #2563eb; margin-bottom: 4px; }
+        .price-card .price-unit { font-size: 0.85rem; color: #6b7280; margin-bottom: 24px; }
+        .price-card ul { list-style: none; padding: 0; margin-bottom: 24px; }
+        .price-card li { padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.9rem; }
+        .price-card li:last-child { border: none; }
+        .price-card li::before { content: "✓ "; color: #10b981; font-weight: 700; }
+        .price-card .cta { display: block; text-align: center; padding: 12px; background: #2563eb; color: #fff; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+        .price-card .cta:hover { background: #1d4ed8; }
+        .price-card .cta.secondary { background: #f3f4f6; color: #1a1a2e; }
+        .price-card .cta.secondary:hover { background: #e5e7eb; }
+        .service-block { background: #fff; padding: 32px; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .service-block h3 { font-size: 1.3rem; color: #2563eb; margin-bottom: 16px; }
+        .service-block table { width: 100%; border-collapse: collapse; }
+        .service-block th, .service-block td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem; }
+        .service-block th { background: #f9fafb; font-weight: 600; }
+        .service-block td.price-cell { color: #2563eb; font-weight: 600; }
+        .note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 4px; margin-top: 32px; font-size: 0.9rem; }
+        .note strong { color: #92400e; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 60px; }
+        footer a { color: #94a3b8; }
+        footer a:hover { color: #60a5fa; }
+        footer .container { padding: 0 24px; }
+        .footer-links { margin-top: 12px; font-size: 0.85rem; }
+        .footer-links a { margin: 0 12px; }
+        @media (max-width: 768px) {
+            nav .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <span class="logo">✦ 丰悦云创</span>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                <a href="/#services">服务</a>
+                <a href="/cases.html">案例</a>
+                <a href="/about-me.html">关于</a>
+                <a href="/pricing.html" class="active">报价</a>
+                <a href="/sla.html">SLA</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>透明定价 · 公开报价</h1>
+            <p>不玩报价游戏，所有服务区间公开，按需定制</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">核心服务套餐</h2>
+        <p class="section-sub">一次性项目，按需求范围报价；以下为基础套餐</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>展示型官网</h3>
+                <div class="desc">3-5 页响应式官网 + 域名 + SSL + 部署</div>
+                <div class="price">¥ 3,000 - 8,000</div>
+                <div class="price-unit">一次性</div>
+                <ul>
+                    <li>响应式设计（PC + 移动）</li>
+                    <li>3-5 个页面</li>
+                    <li>联系表单 + 邮件通知</li>
+                    <li>SEO 基础优化</li>
+                    <li>域名 + SSL 证书</li>
+                    <li>首年免费托管</li>
+                    <li>7 天交付</li>
+                </ul>
+                <a href="#contact" class="cta secondary">咨询下单</a>
+            </div>
+
+            <div class="price-card featured">
+                <h3>企业级官网 / SaaS</h3>
+                <div class="desc">CMS + 用户系统 + 后台管理 + 数据统计</div>
+                <div class="price">¥ 15,000 - 50,000</div>
+                <div class="price-unit">一次性</div>
+                <ul>
+                    <li>完整后台管理系统</li>
+                    <li>用户/权限管理（RBAC）</li>
+                    <li>内容管理（CMS）</li>
+                    <li>数据统计 + 报表导出</li>
+                    <li>SEO 深度优化</li>
+                    <li>性能优化（CDN/缓存）</li>
+                    <li>首年免费托管 + 维护</li>
+                    <li>15-30 天交付</li>
+                </ul>
+                <a href="#contact" class="cta">咨询下单</a>
+            </div>
+
+            <div class="price-card">
+                <h3>定制软件系统</h3>
+                <div class="desc">业务系统、ERP/CRM、API 集成、自动化流程</div>
+                <div class="price">¥ 30,000+</div>
+                <div class="price-unit">按复杂度报价</div>
+                <ul>
+                    <li>需求调研 + 方案设计</li>
+                    <li>数据库设计 + 架构</li>
+                    <li>前后端全栈开发</li>
+                    <li>测试 + 部署上线</li>
+                    <li>文档 + 培训</li>
+                    <li>30-90 天交付</li>
+                </ul>
+                <a href="#contact" class="cta secondary">咨询下单</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">细分服务报价</h2>
+        <p class="section-sub">可单点服务，也可打包</p>
+
+        <div class="service-block">
+            <h3>💻 软件开发</h3>
+            <table>
+                <thead>
+                    <tr><th>服务</th><th>规格</th><th>价格</th><th>交付</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>静态落地页</td><td>1 页 + 部署</td><td class="price-cell">¥ 1,500 - 3,000</td><td>3-5 天</td></tr>
+                    <tr><td>展示型官网</td><td>3-5 页 + CMS</td><td class="price-cell">¥ 3,000 - 8,000</td><td>7-10 天</td></tr>
+                    <tr><td>电商小程序</td><td>商品/订单/支付</td><td class="price-cell">¥ 15,000 - 30,000</td><td>20-30 天</td></tr>
+                    <tr><td>定制业务系统</td><td>按需求</td><td class="price-cell">¥ 30,000+</td><td>30-90 天</td></tr>
+                    <tr><td>AI 应用集成</td><td>对接大模型/Agent</td><td class="price-cell">¥ 5,000 - 30,000</td><td>7-30 天</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-block">
+            <h3>☁️ 云部署 / 运维</h3>
+            <table>
+                <thead>
+                    <tr><th>服务</th><th>规格</th><th>价格</th><th>周期</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>云服务器部署</td><td>1 台 + 环境配置</td><td class="price-cell">¥ 500 - 2,000</td><td>一次性</td></tr>
+                    <tr><td>域名 + SSL 申请</td><td>代申请 + 配置</td><td class="price-cell">¥ 200 - 500</td><td>一次性</td></tr>
+                    <tr><td>监控报警</td><td>CPU/内存/接口</td><td class="price-cell">¥ 200/月起</td><td>月付</td></tr>
+                    <tr><td>数据备份</td><td>本地 + 异地</td><td class="price-cell">¥ 300/月起</td><td>月付</td></tr>
+                    <tr><td>故障应急响应</td><td>7×24</td><td class="price-cell">¥ 500/次</td><td>按需</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-block">
+            <h3>🛡️ 维护服务（年度签约）</h3>
+            <table>
+                <thead>
+                    <tr><th>套餐</th><th>包含</th><th>价格</th><th>适合</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>基础版</td><td>Bug 修复 + 安全更新 + 工单 5 小时/月</td><td class="price-cell">¥ 5,000/年</td><td>官网/小程序</td></tr>
+                    <tr><td>标准版（推荐）</td><td>基础 + 性能监控 + 数据备份 + 工单 15 小时/月</td><td class="price-cell">¥ 12,000/年</td><td>业务系统</td></tr>
+                    <tr><td>旗舰版</td><td>标准 + 7×24 紧急响应 + 工单 40 小时/月</td><td class="price-cell">¥ 36,000/年</td><td>核心业务</td></tr>
+                    <tr><td>超额工时</td><td>超出套餐工时</td><td class="price-cell">¥ 300/小时</td><td>按需</td></tr>
+                    <tr><td>新功能开发</td><td>SoW 单独报价</td><td class="price-cell">¥ 1,500 起</td><td>按需</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-block">
+            <h3>🤖 AI 应用 / 自动化</h3>
+            <table>
+                <thead>
+                    <tr><th>服务</th><th>规格</th><th>价格</th><th>交付</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>AI 客服集成</td><td>公众号/网站 + LLM</td><td class="price-cell">¥ 3,000 - 8,000</td><td>3-7 天</td></tr>
+                    <tr><td>文档问答系统</td><td>RAG + 私有知识库</td><td class="price-cell">¥ 8,000 - 20,000</td><td>7-15 天</td></tr>
+                    <tr><td>工作流自动化</td><td>n8n / 脚本</td><td class="price-cell">¥ 2,000 - 10,000</td><td>5-10 天</td></tr>
+                    <tr><td>AI Agent 定制</td><td>多步推理 + 工具调用</td><td class="price-cell">¥ 10,000 - 50,000</td><td>15-30 天</td></tr>
+                    <tr><td>AI 咨询</td><td>1 小时一对一</td><td class="price-cell">¥ 500/小时</td><td>当日</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-block">
+            <h3>🎓 咨询 / 培训</h3>
+            <table>
+                <thead>
+                    <tr><th>服务</th><th>规格</th><th>价格</th><th>形式</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>技术咨询</td><td>1 小时一对一</td><td class="price-cell">¥ 500/小时</td><td>远程/线下</td></tr>
+                    <tr><td>架构评审</td><td>1 个项目</td><td class="price-cell">¥ 3,000 - 10,000</td><td>报告</td></tr>
+                    <tr><td>代码审计</td><td>1 个项目</td><td class="price-cell">¥ 5,000 - 20,000</td><td>报告</td></tr>
+                    <tr><td>团队培训</td><td>半天/全天</td><td class="price-cell">¥ 3,000 - 8,000</td><td>线上/线下</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">付款方式</h2>
+        <div class="service-block">
+            <p style="margin-bottom: 16px;"><strong>一次性项目</strong>：3:7 付款（30% 预付款启动，70% 验收后结清）</p>
+            <p style="margin-bottom: 16px;"><strong>长期合作</strong>：月度/季度结算，详见《长期合作协议》</p>
+            <p style="margin-bottom: 16px;"><strong>小项目（≤ ¥ 3,000）</strong>：一次性付清启动</p>
+            <p style="margin-bottom: 16px;"><strong>支付方式</strong>：银行转账 / 支付宝 / 微信支付 / 对公账户</p>
+            <p><strong>发票</strong>：可开具增值税普通发票 / 专用发票</p>
+        </div>
+
+        <div class="note">
+            <strong>📌 价格说明：</strong>以上报价为参考区间，最终价格根据需求细节确定。
+            项目复杂度高、需求变动多、工期紧张的情况，价格会上浮 20%-50%。
+            所有报价含税，签订合同后有 7 天无理由取消期（仅限预付款可退）。
+        </div>
+
+        <h2 class="section-title" id="contact" style="margin-top: 60px;">联系我们</h2>
+        <div class="service-block" style="text-align: center;">
+            <p style="font-size: 1.1rem; margin-bottom: 16px;">📧 邮箱：<a href="mailto:3954591720@qq.com" style="color: #2563eb;">3954591720@qq.com</a></p>
+            <p style="margin-bottom: 16px;">⏰ 工作时间：周一至周五 09:00-18:00</p>
+            <p style="margin-bottom: 16px;">📍 地址：陕西省宝鸡市渭滨区高新开发区高新大道188号院5幢2层</p>
+            <p style="color: #6b7280; font-size: 0.9rem;">紧急客户：先发邮件，标题加 [紧急]，1 小时内响应</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 宝鸡丰悦云创科技公司</p>
+            <p style="margin-top: 8px;">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备XXXXXXXX号-1</a>
+                <span style="color: #6b7280; margin: 0 8px;">|</span>
+                <span style="color: #6b7280;">陕公网安备 XXXXXXXXXXXXXXX 号</span>
+            </p>
+            <p class="footer-links">
+                <a href="/cases.html">案例</a>
+                <a href="/pricing.html">报价</a>
+                <a href="/sla.html">SLA</a>
+                <a href="/privacy-policy.html">隐私政策</a>
+                <a href="/terms.html">服务条款</a>
+                <a href="/data-policy.html">数据策略</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

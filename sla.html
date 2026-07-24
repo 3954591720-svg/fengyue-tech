@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA 服务承诺 | 丰悦云创</title>
+    <meta name="description" content="丰悦云创服务质量承诺：响应时间、解决时间、可用性、赔付标准，公开透明。">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 100; }
+        nav .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        nav .logo { font-weight: 700; font-size: 1.15rem; background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav .nav-links { display: flex; gap: 32px; }
+        nav .nav-links a { font-size: 0.9rem; color: #4b5563; transition: color 0.2s; }
+        nav .nav-links a:hover { color: #2563eb; }
+        nav .nav-links a.active { color: #2563eb; font-weight: 600; }
+        .hero { padding: 140px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; text-align: center; }
+        .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 16px; }
+        .hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+        .section-title { font-size: 1.6rem; color: #2563eb; margin-bottom: 12px; text-align: center; margin-top: 40px; }
+        .section-sub { text-align: center; color: #6b7280; margin-bottom: 40px; font-size: 0.95rem; }
+        .commitment { background: linear-gradient(135deg, #2563eb, #7c3aed); color: #fff; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; }
+        .commitment h2 { font-size: 1.8rem; margin-bottom: 16px; }
+        .commitment .number { font-size: 3rem; font-weight: 700; }
+        .commitment p { font-size: 1.1rem; opacity: 0.9; }
+        .sla-table { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 24px; overflow-x: auto; }
+        .sla-table table { width: 100%; border-collapse: collapse; }
+        .sla-table th, .sla-table td { padding: 14px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem; }
+        .sla-table th { background: #f9fafb; font-weight: 600; color: #1a1a2e; }
+        .sla-table .level { font-weight: 600; }
+        .sla-table .level-p0 { color: #dc2626; }
+        .sla-table .level-p1 { color: #ea580c; }
+        .sla-table .level-p2 { color: #ca8a04; }
+        .sla-table .level-p3 { color: #16a34a; }
+        .sla-table .time { font-family: monospace; color: #2563eb; font-weight: 600; }
+        .promise-card { background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 24px; }
+        .promise-card h3 { font-size: 1.3rem; color: #2563eb; margin-bottom: 16px; }
+        .promise-card ul { list-style: none; padding: 0; }
+        .promise-card li { padding: 12px 0; padding-left: 32px; position: relative; border-bottom: 1px solid #f3f4f6; }
+        .promise-card li:last-child { border: none; }
+        .promise-card li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: 700; font-size: 1.2rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .compensation { background: #fef2f2; border-left: 4px solid #dc2626; padding: 20px 24px; border-radius: 8px; margin-bottom: 24px; }
+        .compensation h4 { color: #dc2626; margin-bottom: 12px; font-size: 1.1rem; }
+        .compensation ul { list-style: disc; padding-left: 20px; color: #7f1d1d; }
+        .compensation li { padding: 4px 0; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 60px; }
+        footer a { color: #94a3b8; }
+        footer a:hover { color: #60a5fa; }
+        footer .container { padding: 0 24px; }
+        .footer-links { margin-top: 12px; font-size: 0.85rem; }
+        .footer-links a { margin: 0 12px; }
+        @media (max-width: 768px) {
+            nav .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .commitment .number { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <span class="logo">✦ 丰悦云创</span>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                <a href="/#services">服务</a>
+                <a href="/cases.html">案例</a>
+                <a href="/about-me.html">关于</a>
+                <a href="/pricing.html">报价</a>
+                <a href="/sla.html" class="active">SLA</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>服务承诺 · SLA</h1>
+            <p>写下来就是承诺，做不到就是赔偿</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="commitment">
+            <div class="number">99.5%</div>
+            <h2>年度可用性承诺</h2>
+            <p>允许月度不可用 ≤ 3.6 小时，达不到按比例赔付</p>
+        </div>
+
+        <h2 class="section-title">响应与解决时间</h2>
+        <div class="sla-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>级别</th>
+                        <th>业务影响</th>
+                        <th>响应时间</th>
+                        <th>解决目标</th>
+                        <th>示例场景</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="level level-p0">P0 紧急</td>
+                        <td>业务完全中断</td>
+                        <td class="time">≤ 30 分钟</td>
+                        <td class="time">≤ 4 小时</td>
+                        <td>系统宕机、数据库损坏、支付中断</td>
+                    </tr>
+                    <tr>
+                        <td class="level level-p1">P1 高</td>
+                        <td>核心功能故障</td>
+                        <td class="time">≤ 2 小时</td>
+                        <td class="time">≤ 8 小时</td>
+                        <td>登录失败、订单异常、数据丢失</td>
+                    </tr>
+                    <tr>
+                        <td class="level level-p2">P2 中</td>
+                        <td>非核心功能异常</td>
+                        <td class="time">≤ 8 小时</td>
+                        <td class="time">≤ 24 小时</td>
+                        <td>页面报错、统计不准、通知延迟</td>
+                    </tr>
+                    <tr>
+                        <td class="level level-p3">P3 低</td>
+                        <td>优化建议 / 咨询</td>
+                        <td class="time">≤ 24 小时</td>
+                        <td class="time">≤ 72 小时</td>
+                        <td>UI 调整、新增功能咨询、性能优化</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">七项承诺</h2>
+        <div class="grid-2">
+            <div class="promise-card">
+                <h3>🕐 1. 响应承诺</h3>
+                <ul>
+                    <li>P0 故障 30 分钟内首次响应</li>
+                    <li>工作时间（9:00-18:00）所有级别 100% 覆盖</li>
+                    <li>非工作时间 P0/P1 紧急电话 100% 接通</li>
+                    <li>节假日提供值班工程师</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>📊 2. 进度透明</h3>
+                <ul>
+                    <li>所有 P0/P1 工单实时同步进度</li>
+                    <li>每周一次书面进度报告</li>
+                    <li>每月输出《系统运行报告》</li>
+                    <li>所有变更提前 24 小时书面通知</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>🔒 3. 数据安全</h3>
+                <ul>
+                    <li>客户数据 100% 加密存储</li>
+                    <li>本地 + 异地双重备份</li>
+                    <li>每月备份恢复演练</li>
+                    <li>详见《数据保留与删除策略》</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>🛡️ 4. 安全更新</h3>
+                <ul>
+                    <li>高危漏洞 24 小时内修复</li>
+                    <li>中危漏洞 7 天内修复</li>
+                    <li>低危漏洞下次维护窗口处理</li>
+                    <li>每季度一次安全扫描报告</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>📈 5. 性能保障</h3>
+                <ul>
+                    <li>接口响应时间 P95 ≤ 500ms</li>
+                    <li>页面加载时间 ≤ 3 秒（4G）</li>
+                    <li>并发支持 ≥ 1000 QPS（基础架构）</li>
+                    <li>每季度性能基准测试</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>🎓 6. 沟通支持</h3>
+                <ul>
+                    <li>专属技术对接人</li>
+                    <li>每周例会（可选）</li>
+                    <li>7×24 紧急联系渠道</li>
+                    <li>季度业务评审（VIP）</li>
+                </ul>
+            </div>
+
+            <div class="promise-card">
+                <h3>💰 7. 不达标赔付</h3>
+                <ul>
+                    <li>未达可用性目标：按不可用时长 10 倍返还</li>
+                    <li>未达响应时间：超时 1 小时返 1% 服务费</li>
+                    <li>重大过失：客户可终止合同并全额退款</li>
+                    <li>数据丢失：根据合同约定赔偿</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">SLA 分级（按服务套餐）</h2>
+        <div class="sla-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>套餐</th>
+                        <th>可用性目标</th>
+                        <th>7×24 支持</th>
+                        <th>工单额度</th>
+                        <th>年费</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>基础版</td>
+                        <td>99.0%（月度 ≤ 7.2 小时）</td>
+                        <td>工作时间</td>
+                        <td>5 小时/月</td>
+                        <td>¥ 5,000</td>
+                    </tr>
+                    <tr style="background: #eff6ff;">
+                        <td><strong>标准版（推荐）</strong></td>
+                        <td><strong>99.5%（月度 ≤ 3.6 小时）</strong></td>
+                        <td><strong>P0/P1 紧急</strong></td>
+                        <td><strong>15 小时/月</strong></td>
+                        <td><strong>¥ 12,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>旗舰版</td>
+                        <td>99.9%（月度 ≤ 43 分钟）</td>
+                        <td>7×24 全覆盖</td>
+                        <td>40 小时/月</td>
+                        <td>¥ 36,000</td>
+                    </tr>
+                    <tr>
+                        <td>单次服务</td>
+                        <td>单次 SLA</td>
+                        <td>项目期间</td>
+                        <td>按需</td>
+                        <td>单次报价</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">不可抗力与免责</h2>
+        <div class="promise-card">
+            <h3>以下情况不计入 SLA</h3>
+            <ul>
+                <li>不可抗力（地震、洪水、战争、政府行为）</li>
+                <li>云厂商基础故障（已购买云厂商 SLA 的，按厂商条款处理）</li>
+                <li>客户原因（账号泄露、未支付费用、违规操作）</li>
+                <li>第三方服务故障（DNS、CDN、短信、支付）</li>
+                <li>客户未配合提供必要信息或权限</li>
+                <li>超出套餐范围的功能或工时</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">赔付机制</h2>
+        <div class="compensation">
+            <h4>📌 如何申请赔付</h4>
+            <ul>
+                <li>客户在故障发生 24 小时内书面提出（含故障时间、影响、证据）</li>
+                <li>乙方 5 个工作日内核实</li>
+                <li>确认后 10 个工作日内执行赔付（抵扣下次服务费 / 退款）</li>
+                <li>争议部分提交第三方检测或仲裁</li>
+            </ul>
+        </div>
+
+        <div class="compensation">
+            <h4>📌 赔付标准</h4>
+            <ul>
+                <li>可用性不达标：不可用时长 × 10 × 当日服务费</li>
+                <li>响应超时：超出时长对应服务费的 1%/小时</li>
+                <li>数据丢失（非客户原因）：根据合同金额的 10%-50%</li>
+                <li>单次赔付上限：不超过当月服务费的 100%</li>
+                <li>年度累计赔付上限：不超过年度服务费的 50%</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">持续改进</h2>
+        <div class="promise-card">
+            <h3>📌 我们定期审视这些数字</h3>
+            <ul>
+                <li>每季度公开一次 SLA 达成率（脱敏）</li>
+                <li>每年度根据客户反馈调整 SLA 目标</li>
+                <li>故障后 5 个工作日内输出《故障复盘报告》</li>
+                <li>所有报告保存在 GitHub 公开仓库</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 宝鸡丰悦云创科技公司</p>
+            <p style="margin-top: 8px;">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备XXXXXXXX号-1</a>
+                <span style="color: #6b7280; margin: 0 8px;">|</span>
+                <span style="color: #6b7280;">陕公网安备 XXXXXXXXXXXXXXX 号</span>
+            </p>
+            <p class="footer-links">
+                <a href="/cases.html">案例</a>
+                <a href="/pricing.html">报价</a>
+                <a href="/sla.html">SLA</a>
+                <a href="/privacy-policy.html">隐私政策</a>
+                <a href="/terms.html">服务条款</a>
+                <a href="/data-policy.html">数据策略</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

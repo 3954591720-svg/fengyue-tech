@@ -12,6 +12,9 @@
 
 - 官网：https://fengyue-tech.vercel.app
 - 案例：https://fengyue-tech.vercel.app/cases.html
+- 公开报价：https://fengyue-tech.vercel.app/pricing.html
+- SLA 服务承诺：https://fengyue-tech.vercel.app/sla.html
+- 数据策略：https://fengyue-tech.vercel.app/data-policy.html
 - 隐私政策：https://fengyue-tech.vercel.app/privacy-policy.html
 - 服务条款：https://fengyue-tech.vercel.app/terms.html
 
@@ -23,6 +26,9 @@
 fengyue-tech/                       ← 公网仓库（仅放公开内容）
 ├── index.html                      ← 官网首页
 ├── cases.html                      ← 案例展示（脱敏）
+├── pricing.html                    ← 公开报价
+├── sla.html                        ← SLA 服务承诺
+├── data-policy.html                ← 数据保留与删除策略
 ├── privacy-policy.html             ← 隐私政策
 ├── terms.html                      ← 服务条款
 ├── logo.svg                        ← 品牌 logo
@@ -39,14 +45,26 @@ fengyue-tech/                       ← 公网仓库（仅放公开内容）
 │   ├── 任务看板模板.md             ← 项目管理
 │   └── 合规合法合理合情建设进度.md  ← 战略进度追踪
 ├── contracts/                      ← 合同模板
-│   ├── 技术服务合同模板.md
+│   ├── 技术服务合同模板.md          ← 一次性项目
+│   ├── 长期技术合作协议模板.md     ← 年度签约
+│   ├── 维护服务协议模板.md          ← 售后运维
+│   ├── 项目验收清单标准模板.md      ← 验收阶段
 │   └── 保密协议模板.md
 ├── operations/                     ← 运营手册
 │   ├── ICP备案完整操作指南.md
-│   └── ICP备案前-域名与服务器选型.md
+│   ├── ICP备案前-域名与服务器选型.md
+│   ├── 数据保留与删除策略.md
+│   ├── 备份与灾难恢复方案.md
+│   └── 业务连续性计划.md
 ├── scripts/                        ← 自动化工具
 │   ├── generate_quote.py           ← 报价单 PDF 生成
-│   └── generate_contract.py        ← 合同 PDF 生成
+│   ├── generate_contract.py        ← 合同 PDF 生成
+│   ├── generate_invoice.py         ← 发票 PDF 生成
+│   ├── finance_report.py           ← 月度财务报表
+│   ├── pomodoro.py                 ← 番茄钟工时追踪
+│   ├── weekly_report.py            ← 周报自动生成
+│   ├── cron_dashboard.py           ← Cron 任务监控
+│   └── update_icp.py               ← ICP 备案号更新脚本
 ├── company_plan.md                 ← 全景运营方案
 └── 运营交付_20260723.md            ← 交付记录
 
